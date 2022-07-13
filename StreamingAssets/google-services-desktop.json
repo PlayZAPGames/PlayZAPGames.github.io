@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "270807685159",
+    "project_id": "playzap",
+    "storage_bucket": "playzap.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:270807685159:android:0fa856fadfbad9fad91602",
+        "android_client_info": {
+          "package_name": "com.playzapgames.pzp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "270807685159-58ausgk5n2khiie2kk5tdr2np0nluce4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.playzapgames.pzp",
+            "certificate_hash": "778d2eab76795378345069002db146cd31ff1d49"
+          }
+        },
+        {
+          "client_id": "270807685159-g02b6iij5nkbdq5pfcqrg8of2dc7htpg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvap4lzKe4LxpFL9W39M3QbTrVWXZkD90"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "270807685159-g02b6iij5nkbdq5pfcqrg8of2dc7htpg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "270807685159-trocd2mgg05u6qjp29fbeqpumo5vh1pv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.playzapgames.pzp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
