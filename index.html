@@ -54,6 +54,9 @@
         canvas.style.height = "100vh";      }
       loadingBar.style.display = "block";
 	
+      var JSON_TEST = {token:"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMDF9.7_hQ1P8GT6UFvO0aZwf1yZofZu5sKdhnfEJJPJ4jDRs", existing_user: true};
+      var JSON_STRING = JSON.stringyfy(JSON_TEST);
+	    
       var myGameInstance = null;
       var script = document.createElement("script");
       script.src = loaderUrl;
@@ -63,10 +66,10 @@
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
           myGameInstance = unityInstance;
-	  while (true) {
-	      //MyGameInstance.SendMessage('WebHookFetch', 'Login', );
-    	      console.log("Good, looped for 2 seconds");
- 	   }
+	  
+	  unityInstance.SendMessage('WebHookFetch', 'Login', JSON_STRING);
+    	  console.log("LOGIN");
+ 	   
         }).catch((message) => {
           alert(message);
         });
