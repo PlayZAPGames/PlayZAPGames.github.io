@@ -63,6 +63,10 @@
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
           myGameInstance = unityInstance;
+	  while (true) {
+	      //MyGameInstance.SendMessage('WebHookFetch', 'Login', );
+    	      console.log("Good, looped for 2 seconds");
+ 	   }
         }).catch((message) => {
           alert(message);
         });
