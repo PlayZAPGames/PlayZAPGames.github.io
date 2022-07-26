@@ -53,7 +53,8 @@
         canvas.style.width = "100vw";
         canvas.style.height = "100vh";      }
       loadingBar.style.display = "block";
-
+	
+      var myGameInstance = null;
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
@@ -61,7 +62,7 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
-          
+          myGameInstance = unityInstance;
         }).catch((message) => {
           alert(message);
         });
