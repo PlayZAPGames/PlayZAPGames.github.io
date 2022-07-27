@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+   
+    <title>PlayZap</title>
+   
+  </head>
+
+  <style>
+    .center {
+      margin: 0px;
+     height: 100%;
+     width: 100%;
+      overflow: hidden;
+      align-items: center;
+      padding-left: 35%;
+      padding-top: 2%;
+      padding-bottom: 2%;
+     
+    }
+    </style>
+
+ 	<body style="margin:0px;padding:0px;overflow:hidden" >
+  
+ 	</body>
+
+ 	<script>
+ 		var ifrm = document.createElement("iframe");
+        ifrm.setAttribute("src", `https://${subdomain != "" ? subdomain : "playzap"}.readyplayer.me/avatar?frameApi`);
+        ifrm.setAttribute("scrolling","no");
+        ifrm.setAttribute("frameborder","0");
+        ifrm.style.width = "480px";
+        ifrm.style.height = "720px";
+        ifrm.style.paddingLeft = "35%";
+        ifrm.style.paddingTop = "2%";
+        
+        document.body.appendChild(ifrm);
+	</script>
+</html>
