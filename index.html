@@ -57,12 +57,12 @@
 		window.addEventListener('message', function (e) {
 			const data = JSON.parse(e.data);
 			console.log("POST MESSAGE DATA", data);
-			JSON_STRING = data;
+			var JSON_STRING = data;
 		});
 
       //var JSON_TEST = {token : parent.nobita, existing_user: parent.shizuka};
-      var JSON_STRING = JSON.stringify(JSON_TEST);
-	  console.log("JSON_STRING",JSON_STRING);
+      //var JSON_STRING = JSON.stringify(JSON_TEST);
+	  console.log("JSON_STRING", JSON_STRING);
 
       var myGameInstance = null;
       var script = document.createElement("script");
