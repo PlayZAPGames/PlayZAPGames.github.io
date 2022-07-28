@@ -58,6 +58,8 @@
 		window.addEventListener('message', function (e) {
 			const data = e.data;
 
+			console.log("POST MESSAGE DATA", e.data);
+
 			console.log("POST MESSAGE existing_user", e.data.existing_user);
 			console.log("POST MESSAGE token", e.data.token);
 
