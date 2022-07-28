@@ -60,11 +60,15 @@
 			if(e.origin == "https://piperplay.webflow.io")
 			{
 				const data = e.data;
-
 				console.log("POST MESSAGE DATA", e.data);
 
-				console.log("POST MESSAGE existing_user", e.data.existing_user);
-				console.log("POST MESSAGE token", e.data.token);
+				var JSON_TEST = JSON.parse(data);
+      			var JSON_STRING = JSON.stringify(JSON_TEST);
+	  			console.log("JSON_STRING", JSON_STRING);
+
+				
+				console.log("POST MESSAGE existing_user", JSON_TEST.existing_user);
+				console.log("POST MESSAGE token", JSON_TEST.token);
 			}
 			else{
 				console.log(e.origin);
