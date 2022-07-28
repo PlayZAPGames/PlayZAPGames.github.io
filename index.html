@@ -55,7 +55,7 @@
       loadingBar.style.display = "block";
 	  
 		window.addEventListener('message', function (e) {
-			const data = JSON.parse(e.data);
+			const data = e.data;
 			console.log("POST MESSAGE DATA", data);
 			var JSON_STRING = data;
 			console.log("JSON_STRING", JSON_STRING);
