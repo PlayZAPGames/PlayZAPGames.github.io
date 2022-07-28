@@ -56,14 +56,15 @@
 	  
 	  	var JSON_STRING = "";
 		window.addEventListener('message', function (e) {
-			if(e.origin == "https://piperplay.webflow.io/")
-			{
 				const data = e.data;
 
 				console.log("POST MESSAGE DATA", e.data);
 
 				console.log("POST MESSAGE existing_user", e.data.existing_user);
 				console.log("POST MESSAGE token", e.data.token);
+			if(e.origin == "https://piperplay.webflow.io/")
+			{
+				
 
 			}
 			else{
