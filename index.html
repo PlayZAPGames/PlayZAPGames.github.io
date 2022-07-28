@@ -57,47 +57,50 @@
 	  	var JSON_STRING = "";
 		window.addEventListener('message', function (e) {
 
-			if(e.origin == "https://piperplay.webflow.io")
-			{
-				const data = e.data;
-				console.log("POST MESSAGE DATA", e.data);
+		if(e.origin == "https://piperplay.webflow.io")
+		{
+			const data = e.data;
+			console.log("POST MESSAGE DATA", e.data);
 
-				var JSON_TEST = JSON.parse(data);
-      			var JSON_STRING = JSON.stringify(JSON_TEST);
-	  			console.log("JSON_STRING", JSON_STRING);
+			var JSON_TEST = JSON.parse(data);
+  			var JSON_STRING = JSON.stringify(JSON_TEST);
+  			console.log("JSON_STRING", JSON_STRING);
 
-				
-				console.log("POST MESSAGE existing_user", JSON_TEST.existing_user);
-				console.log("POST MESSAGE token", JSON_TEST.token);
-			}
-			else{
-				console.log(e.origin);
-			}
 			
-		});
+			console.log("POST MESSAGE existing_user", JSON_TEST.existing_user);
+			console.log("POST MESSAGE token", JSON_TEST.token);
+
+			var myGameInstance = null;
+			var script = document.createElement("script");
+			script.src = loaderUrl;
+			script.onload = () => {
+			createUnityInstance(canvas, config, (progress) => {
+		  		progressBarFull.style.width = 100 * progress + "%";
+			}).then((unityInstance) => {
+				loadingBar.style.display = "none";
+				myGameInstance = unityInstance;
+
+			unityInstance.SendMessage('WebHookFetch', 'Login', JSON_STRING);
+			  console.log(JSON_STRING);
+			   
+			}).catch((message) => {
+		  		alert(message);
+			});
+			};
+			document.body.appendChild(script);
+		}
+
+		else{
+			console.log(e.origin);
+		}
+		
+	});
 
       //var JSON_TEST = {token : parent.nobita, existing_user: parent.shizuka};
       //var JSON_STRING = JSON.stringify(JSON_TEST);
 	  //console.log("JSON_STRING", JSON_STRING);
 
-      var myGameInstance = null;
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-          myGameInstance = unityInstance;
-	  
-	  unityInstance.SendMessage('WebHookFetch', 'Login', JSON_STRING);
-    	  console.log(JSON_STRING);
- 	   
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
+      
     </script>
   </body>
 </html>
