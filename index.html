@@ -53,10 +53,12 @@
         canvas.style.width = "100vw";
         canvas.style.height = "100vh";      }
       loadingBar.style.display = "block";
-	
-      let JSON_TEST = { };
+	  
+	  console.log(parent.nobita);
+      var JSON_TEST = {token : parent.nobita, existing_user: parent.shizuka};
       var JSON_STRING = JSON.stringify(JSON_TEST);
-	    
+	  console.log("JSON_STRING",JSON_STRING);
+
       var myGameInstance = null;
       var script = document.createElement("script");
       script.src = loaderUrl;
@@ -68,7 +70,7 @@
           myGameInstance = unityInstance;
 	  
 	  unityInstance.SendMessage('WebHookFetch', 'Login', JSON_STRING);
-    	  console.log("LOGIN");
+    	  console.log(JSON_STRING);
  	   
         }).catch((message) => {
           alert(message);
