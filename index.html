@@ -56,13 +56,20 @@
 	  
 	  	var JSON_STRING = "";
 		window.addEventListener('message', function (e) {
-			const data = e.data;
+			if(e.data.channel == "https://piperplay.webflow.io/")
+			{
+				const data = e.data;
 
-			console.log("POST MESSAGE DATA", e.data);
+				console.log("POST MESSAGE DATA", e.data);
 
-			console.log("POST MESSAGE existing_user", e.data.existing_user);
-			console.log("POST MESSAGE token", e.data.token);
+				console.log("POST MESSAGE existing_user", e.data.existing_user);
+				console.log("POST MESSAGE token", e.data.token);
 
+			}
+			else{
+				console.log(e.data.channel);
+			}
+			
 		});
 
       //var JSON_TEST = {token : parent.nobita, existing_user: parent.shizuka};
@@ -90,3 +97,44 @@
     </script>
   </body>
 </html>
+{
+    "target": "metamask-contentscript",
+    "data": {
+        "name": "metamask-provider",
+        "data": {
+            "jsonrpc": "2.0",
+            "id": 1549563395,
+            "method": "metamask_sendDomainMetadata",
+            "params": {
+                "name": "Unity WebGL Player | PlayZap",
+                "icon": "https://lobster-app-9jjq2.ondigitalocean.app/TemplateData/favicon.ico"
+            }
+        }
+    }
+}
+JSON.stringify({token:key, existing_user: existing_user})
+
+{
+    "target": "metamask-contentscript",
+    "data": {
+        "name": "metamask-provider",
+        "data": {
+            "method": "metamask_getProviderState",
+            "jsonrpc": "2.0",
+            "id": 1758020210
+        }
+    }
+}
+{
+    "target": "metamask-inpage",
+    "data": {
+        "name": "metamask-provider",
+        "data": {
+            "method": "metamask_chainChanged",
+            "params": {
+                "chainId": "0x13881",
+                "networkVersion": "80001"
+            }
+        }
+    }
+}
