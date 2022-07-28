@@ -54,12 +54,12 @@
         canvas.style.height = "100vh";      }
       loadingBar.style.display = "block";
 	  
-	  	var JSON_STRING;
+	  	var JSON_STRING = "";
 		window.addEventListener('message', function (e) {
 			const data = e.data;
-			console.log("POST MESSAGE DATA", data);
+			console.log("POST MESSAGE DATA", data.toString());
 			JSON_STRING = data;
-			console.log("JSON_STRING", JSON_STRING);
+			console.log("JSON_STRING", JSON_STRING.toString());
 		});
 
       //var JSON_TEST = {token : parent.nobita, existing_user: parent.shizuka};
@@ -76,7 +76,7 @@
           loadingBar.style.display = "none";
           myGameInstance = unityInstance;
 	  
-	  unityInstance.SendMessage('WebHookFetch', 'Login', JSON_STRING);
+	  unityInstance.SendMessage('WebHookFetch', 'Login', JSON_STRING.toString());
     	  console.log(JSON_STRING);
  	   
         }).catch((message) => {
